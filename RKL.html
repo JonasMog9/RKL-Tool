@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RKL Lineup Tester</title>
+    <link rel="stylesheet" href="RKL.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-links">
+            <a href="#description">Help</a>
+            <a href="#contact-me">Contact Me</a>
+        </div>
+        <div class="header-content">
+            <h1>RKL Lineup Tester</h1>
+            <div class="header-icons">
+               
+                <a href="https://x.com/RumbleKongs?s=20">
+                    <img src="X_logo.png" alt="X Logo">
+                </a>
+                <a href="https://opensea.io/collection/rumble-kong-league">
+                    <img src="opensea_logo.png" alt="Opensea Logo">
+                </a>
+                <a href="https://discord.gg/txH8HZqJxe">
+                    <img src="discord_logo.png" alt="Discord Logo">
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+        <h2>Enter your starting 3</h2>
+        <section class="kong-selection">
+            <article class="kong" id="kong1">
+                <div class="kong-image"></div> 
+                <input type="text" id="kong-id-input1" class="kong-id-input" placeholder="Enter Kong ID">
+                <button type="button" class="add-kong-button">Add Kong</button>
+                <div class="boosts">
+                    <p>Defence: <span class="defense-stat">0</span></p>
+                    <p>Finish: <span class="finish-stat">0</span></p>
+                    <p>Shooting: <span class="shooting-stat">0</span></p>
+                    <p>Vision: <span class="vision-stat">0</span></p>
+                    <p>Total: <span class="total-stat">0</span></p>
+                </div>
+            </article>
+            
+            <article class="kong" id="kong2">
+                <div class="kong-image"></div> 
+                <input type="text" id="kong-id-input2" class="kong-id-input" placeholder="Enter Kong ID">
+                <button type="button" class="add-kong-button">Add Kong</button>
+                <div class="boosts">
+                    <p>Defence: <span class="defense-stat">0</span></p>
+                    <p>Finish: <span class="finish-stat">0</span></p>
+                    <p>Shooting: <span class="shooting-stat">0</span></p>
+                    <p>Vision: <span class="vision-stat">0</span></p>
+                    <p>Total: <span class="total-stat">0</span></p>
+                </div>
+            </article>
+            
+            <article class="kong" id="kong3">
+                <div class="kong-image"></div> 
+                <input type="text" id="kong-id-input3" class="kong-id-input" placeholder="Enter Kong ID">
+                <button type="button" class="add-kong-button">Add Kong</button>
+                <div class="boosts">
+                    <p>Defence: <span class="defense-stat">0</span></p>
+                    <p>Finish: <span class="finish-stat">0</span></p>
+                    <p>Shooting: <span class="shooting-stat">0</span></p>
+                    <p>Vision: <span class="vision-stat">0</span></p>
+                    <p>Total: <span class="total-stat">0</span></p>
+                </div>
+            </article>
+            
+        </section>
+        <button type="button" id="calculate-team-total-button">Calculate Team Total</button>
+
+        
+        <button type="button" id="add-team-button">Add Team to Chart</button>
+        <button type="button" id="remove-team-button">Remove Team from Chart</button>
+
+        <!-- Section to Display the Chart -->
+        <div id="teams-chart" class="teams-chart"></div>
+    </main>
+
+    <footer>
+        <div class="team-boosts">
+            <h3>Team Boosts</h3>
+            <div class="boosts">
+                <p>Defense: <span id="team-defense">0</span></p>
+                <p>Finish: <span id="team-finish">0</span></p>
+                <p>Shooting: <span id="team-shooting">0</span></p>
+                <p>Vision: <span id="team-vision">0</span></p>
+               
+                <p>Total: <span id="team-total">0</span></p>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <h3>Description</h3>
+            <p>Rumble Kong League is an NFT collection of 10000 Kongs that can be used in a 3 on 3 basketball play-to-earn video game. These Kongs have stats engraved in their metadata and this tool can be used to compare Kongs and their teams with each other.</p>
+        </div>
+        <div id="contact-me" class="contact-me">
+            <h3>Contact Me</h3>
+            <p>Message me on Twitter <a href="https://twitter.com/mogsNFTs" target="_blank">@mogsNFTs</a> if you have any questions or suggestions.</p>
+        </div>
+    </footer>
+    <script src="RKL.js"></script>
+
+</body>
+</html>
