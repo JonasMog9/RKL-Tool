@@ -11,9 +11,9 @@ from requests.exceptions import RequestException, Timeout
 warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.options.mode.chained_assignment = None
 
-api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImVkOTAzMGVlLTg3YTktNDM3Zi05OWEzLWRmNWI4YTA4Y2RkMyIsIm9yZ0lkIjoiMzYzODM2IiwidXNlcklkIjoiMzczOTMyIiwidHlwZUlkIjoiMzg4OWRhMTctMWNlYy00OGYwLThjMjUtODg3NjhjNDRmNDlmIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE2OTk0OTQyMDAsImV4cCI6NDg1NTI1NDIwMH0.sWNZEnTSKCmZviPW9p-1KyKcCr1kKTnqFjfORiRPT9g"
+api_key = "MYAPIKEY"
 
-nftContract = "0xEf0182dc0574cd5874494a120750FD222FdB909a" ##RKL
+nftContract = "0xEf0182dc0574cd5874494a120750FD222FdB909a" ##RKL contract taken from etherscan
 cursor = ""
 df = pd.DataFrame()
 
@@ -112,9 +112,7 @@ df['Total Boost'] = 0
 
 # Process each row to extract stats and calculate the total boost
 for index, row in df.iterrows():
-    # Assuming that metadata is in a column named 'metadata'
-    # If it's in a different column, replace 'metadata' with the correct column name
-    # If metadata is a string of JSON, it needs to be loaded into a dictionary
+    
     metadata = json.loads(row['metadata']) if isinstance(row['metadata'], str) else row['metadata']
     attributes = metadata['attributes']
     stats = extract_stats(attributes)
@@ -123,21 +121,21 @@ for index, row in df.iterrows():
     df.at[index, 'Vision'] = stats['Vision']
     df.at[index, 'Finish'] = stats['Finish']
     df.at[index, 'Total Boost'] = stats['Total Boost']
-# ... [previous code] ...
 
-# Assuming 'df' is your DataFrame containing all the NFT data.
 
-test_limit = 100  # Adjust as needed for testing
+
+
+test_limit = 100 
 df_test = df.head(test_limit)
 
 df_test['Image URL'] = df_test['token_uri'].apply(get_image_url)
 
-# Now df contains all the data with the calculated stats
+
 
 # Add a new column for image URLs
 df['Image URL'] = df['token_uri'].apply(get_image_url)
 
-# Select the columns to keep, including the new Image URL column
+
 columns_to_keep = ['token_id', 'Shooting', 'Defense', 'Vision', 'Finish', 'Total Boost', 'Image URL']
 df_simplified = df[columns_to_keep]
 
